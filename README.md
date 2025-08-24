@@ -1,4 +1,4 @@
-# ip_mac_scanning
+# ip_mac_hostname_scanning
 Shell script for scanning and enumerating IP and MAC addresses alongside their hostname, filtered from the `nbtscan` output.
 
 Running this script requires a text file with the IP addresses of the hosts connected in the internal network, generating the following text files:
