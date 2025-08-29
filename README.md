@@ -21,11 +21,15 @@ For example, you can create a file in `~/.foo` with the following:
   
   `alias ipmac='~/tools/ipmac.sh'`
 
+  `DOMAIN=EXAMPLE.INTERNAL`
+
 And then add the following line to the end of the file `~/.bashrc`:
 
   `source ~/.foo`
 
 Doing it this way guarantees not messing with the `~/.bashrc` which can lead to some problems.
+
+The `DOMAIN` environment variable is there to make it easier to perform scripting for the internal network's domain, which adds some relative flexibility and convenience when attempting to enumerate daemons like SMB or used in scripts for filtering or matching using `grep` and/or `awk`.
 
 --------------------
 # Two ways to run the script:
