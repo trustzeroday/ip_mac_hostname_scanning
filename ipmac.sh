@@ -8,9 +8,10 @@
 ####################
 
 
-SCRIPT_DIR=$(dirname "$0")
+#SCRIPT_DIR=$(dirname "$0")
 
-if [ $# -ne 1 ]; then
+if [ $# -ne 1 ]
+then
   echo "Usage: $0 <hosts_file>"
   exit 1
 fi
@@ -40,6 +41,10 @@ echo "${NBTOUTPUT}" > "${OUTPUTFILE0}"
 # Filtering IP Addresses
 #--------------------#
 echo "[!] Filtering IP Addresses"
+if [ -f "${OUTPUTFILE1}" ]
+then
+  rm "${OUTPUTFILE1}"
+fi
 while read -r line
 do
   IPADDR=$(echo "${line}"  |\
@@ -59,6 +64,10 @@ echo "[+] Done"
 # Filtering MAC Addresses
 #--------------------#
 echo "[!] Filtering MAC Addresses"
+if [ -f "${OUTPUTFILE2}" ]
+then
+  rm "${OUTPUTFILE2}"
+fi
 while read -r line
 do
   MACADDR=$(echo "${line}"  |\
@@ -77,6 +86,10 @@ echo "[+] Done"
 # Filtering Hostnames
 #--------------------#
 echo "[!] Filtering Hostnames"
+if [ -f "${OUTPUTFILE3}" ]
+then
+  rm "${OUTPUTFILE3}"
+fi
 while read -r line
 do
   HOSTNAME=$(echo "${line}"  |\
